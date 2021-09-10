@@ -8,10 +8,19 @@
         {% if title %}
         <title> {{ title }}</title>
         {% else %}
-        <title> NEWS SITE </title>
+        <title> News site </title>
         {% endif %}
     </head>
     <body>
+          <!-- Content block -->
+          {% block content %}
 
+        <!-- Popular article section  -->
+        <h3> Popular Articles</h3>
+        <ul>
+           {{ macro.displayNewsList(popular)}}
+       </ul>
+
+       {% endblock %}
     </body>
 </html>
