@@ -43,8 +43,9 @@ def process_results(news_list):
         news_results: A list of news objects
     '''
     news_results = []
-    # title,name,urlToImage,description,publishedAt
+   
     for news_item in news_list:
+        id=news_item.get('id')
         title = news_item.get('original_title')
         name = news_item.get('name')
         urlToImage = news_item.get('urlToImage')
@@ -52,7 +53,7 @@ def process_results(news_list):
         publishedAt = news_item.get('publishedAt')
 
         if urlToImage:
-            news_object = News(title,name,urlToImage,description,publishedAt)
+            news_object = News(id,title,name,urlToImage,description,publishedAt)
             news_results.append(news_object)
 
     return news_results
