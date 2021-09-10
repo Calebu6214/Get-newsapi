@@ -13,7 +13,7 @@ def configure_request(app):
     base_url = app.config['NEWS_API_BASE_URL']
 
 
-def get_movies(category):
+def get_news(category):
     '''
     Function that gets the json response to our url request
     '''
@@ -46,14 +46,38 @@ def process_results(news_list):
    
     for news_item in news_list:
         id=news_item.get('id')
-        title = news_item.get('original_title')
+        # title = news_item.get('original_title')
         name = news_item.get('name')
+        url=news_item.get('url')
         urlToImage = news_item.get('urlToImage')
         description = news_item.get('description')
         publishedAt = news_item.get('publishedAt')
+        country=news_item.get('country')
 
         if urlToImage:
-            news_object = News(id,title,name,urlToImage,description,publishedAt)
+            news_object = News(id,name,url,urlToImage,description,publishedAt,country)
             news_results.append(news_object)
 
     return news_results
+
+
+def get_article(id):
+    get_news_details_url = base_url.format(id,apikey)
+
+    with urllib.request.urlopen(get_news_details_url) as url:
+        news_details_data = url.read()
+        news_details_response = json.loads(news_details_data)
+
+        news_object = None
+        if news_details_response:
+            id = news_details_response.get('id')
+            title = news_details_response.get('title')
+            name = news_details_response.get('name')
+            description = news_details_response.get('description')
+            urlToImage = news_details_response.get('urlToImage')
+            url=news_details_response.get('url')
+            publishedAt = news_details_response.get('publishedAt')
+
+            news_object = News(id,title,name,description,urlToImage,url,publishedAt)
+
+    return news_object
