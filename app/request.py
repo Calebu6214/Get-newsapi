@@ -1,4 +1,5 @@
-from .models import News
+from .news import News
+from .article import Articles
 import urllib.request,json
 
 #Getting api key
