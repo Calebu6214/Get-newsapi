@@ -14,11 +14,11 @@ def configure_request(app):
     base_url = app.config['NEWS_API_BASE_URL']
 
 
-def get_news(category):
+def get_news():
     '''
     Function that gets the json response to our url request
     '''
-    get_news_url = base_url.format(category,apikey)
+    get_news_url = 'https://newsapi.org/v2/everything?q=sports&apiKey=03a2bc584b204614aa752fb66a690094 '
 
     with urllib.request.urlopen(get_news_url) as url:
         get_news_data = url.read()
@@ -26,8 +26,8 @@ def get_news(category):
 
         news_results = None
 
-        if get_news_response['results']:
-            news_results_list = get_news_response['results']
+        if get_news_response['articles']:
+            news_results_list = get_news_response['articles']
             news_results = process_results(news_results_list)
 
 
@@ -47,16 +47,16 @@ def process_results(news_list):
    
     for news_item in news_list:
         id=news_item.get('id')
-        # title = news_item.get('original_title')
+        title = news_item.get('title')
         name = news_item.get('name')
         url=news_item.get('url')
         urlToImage = news_item.get('urlToImage')
         description = news_item.get('description')
         publishedAt = news_item.get('publishedAt')
-        country=news_item.get('country')
+       
 
         if urlToImage:
-            news_object = News(id,name,url,urlToImage,description,publishedAt,country)
+            news_object = News(id,title,name,url,urlToImage,description,publishedAt)
             news_results.append(news_object)
 
     return news_results

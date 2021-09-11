@@ -8,7 +8,7 @@ class News:
         self.title = title
         self.name = name
         self.url=url
-        self.urlToImage = "https://businesstoday.co.ke/wp-content/uploads/2019/11/Uhuruto_Madam-Magazine-Kenya.jpg" + urlToImage
+        self.urlToImage =  urlToImage
         self.description = description
         self.publishedAt=publishedAt
         # self.category = category
