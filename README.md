@@ -7,12 +7,12 @@ This is an application that will help people list and preview news articles from
  
 ## How it works 
 As a user can ;
-* see various news sources on the homepage of the application.
+* See various news sources on the homepage of the application.
 * Search for the article you want to see
  
-* see the image, description and the time a news article was created.
+* See the image, description and the time a news article was created.
 
-* click on an article and read the full article on the source website.
+* click on an article link and read the full article on the source website.
 
 ## Behavior driven devlopment (BDD)
 
