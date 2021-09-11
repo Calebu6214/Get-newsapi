@@ -26,6 +26,9 @@ As a user can ;
 Installation for the package can be done via `pip`:
 .pi install flask-bootstrap
 
+## Link to website
+
+
 ## Usage
 
 After installation, import the client class into your project:
@@ -41,7 +44,7 @@ api = NewsApiClient(api_key='XXXXXXXXXXXXXXXXXXXXXXX')
 ```
 
 ## Setup
-* Clone this repo to your desktop
+* git clone https://github.com/Calebu6214/Get-newsapi.git
 
 * Install pip which is the flask package manager..
 * run "pip install flask to install flask.
