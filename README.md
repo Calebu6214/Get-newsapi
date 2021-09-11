@@ -19,7 +19,7 @@ As a user can ;
 
 | ACTION        | OUTPUT              | Behaviour                                         |
 | ---------------- |:--------------------:| -------------------------------------------------:|
-| click search button          |displays news sources | user is able to see news sources on the homepage  |
+| click search button          |displays the articles search | User is able to see news on the homepage  |
 | click link       |navigates to article  | allows user to access the article                 |
 
 ## Installation
@@ -59,9 +59,9 @@ No known bugs.
 
 
 ## Support and contact details
-For feedback contact me through;
-* mark.macharia@student.moringaschool.com
-* 0759329269
+For feedback and any contribution contact me through;
+* Email: calebkimutai97@gmail.com
+* Phone no: O707160385
 
 [![License](https://img.shields.io/github/license/mattlisiv/newsapi-python.svg)](https://github.com/mattlisiv/newsapi-python/blob/master/LICENSE.txt)
 [![PyPI](https://img.shields.io/pypi/v/newsapi-python.svg)](https://pypi.org/project/newsapi-python/)
