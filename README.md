@@ -27,7 +27,7 @@ Installation for the package can be done via `pip`:
 .pi install flask-bootstrap
 
 ## Link to website
-
+. https://get-newsapi.herokuapp.com/
 
 ## Usage
 
