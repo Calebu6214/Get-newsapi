@@ -82,3 +82,19 @@ def get_article(id):
             news_object = News(id,title,name,description,urlToImage,url,publishedAt)
 
     return news_object
+
+
+def search_article():
+    search_news_url = 'https://newsapi.org/v2/everything?q=sports&apiKey=03a2bc584b204614aa752fb66a690094'
+    with urllib.request.urlopen(search_news_url) as url:
+        search_news_data = url.read()
+        search_news_response = json.loads(search_news_data)
+
+        search_news_results = None
+
+        if search_news_response['articles']:
+            search_news_list = search_news_response['articles']
+            search_news_results = process_results(search_news_list)
+
+
+    return search_news_results
