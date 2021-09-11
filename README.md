@@ -68,7 +68,7 @@ For feedback and any contribution contact me through;
 [![License](https://img.shields.io/github/license/mattlisiv/newsapi-python.svg)](https://github.com/mattlisiv/newsapi-python/blob/master/LICENSE.txt)
 [![PyPI](https://img.shields.io/pypi/v/newsapi-python.svg)](https://pypi.org/project/newsapi-python/)
 [![Status](https://img.shields.io/pypi/status/newsapi-python.svg)](https://pypi.org/project/newsapi-python/)
-[![Python](https://img.shields.io/pypi/pyversions/newsapi-python.svg)](https://pypi.org/project/newsapi-python)
+
 
 ### License
 [MITlicense](LICENSE) 2021 **CALEB KIMUTAI KIPNGETICH**
