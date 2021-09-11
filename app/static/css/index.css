@@ -1,3 +1,14 @@
 .btn{
     background-color: green;
 }
+.view{
+    justify-content:space-evenly;
+    list-style: none;
+}
+
+.news-card{
+    list-style-type: none;
+}
+.img-responsive{
+    width:200px;
+}

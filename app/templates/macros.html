@@ -2,11 +2,11 @@
 
     {% for news in news_list %}
     <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 news-card">
-        <li> <a href="{{news.url}}">{{news.title}}</a> </li>
+        <li> <a href="{{news.url}}" class="title">{{news.title}}</a> </li>
         <img src="{{ news.urlToImage }}" alt="{{ news.title }} image" class="img-responsive">
         <li class="text-center">
            
-                
+            {{ news.publishedAt|truncate(100)}} 
         </li>
     </div>
     {% endfor %}

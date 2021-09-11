@@ -84,8 +84,8 @@ def get_article(id):
     return news_object
 
 
-def search_article():
-    search_news_url = 'https://newsapi.org/v2/everything?q=sports&apiKey=03a2bc584b204614aa752fb66a690094'
+def search_article(news_name):
+    search_news_url = 'https://newsapi.org/v2/everything?q={}&apiKey=03a2bc584b204614aa752fb66a690094'.format(news_name)
     with urllib.request.urlopen(search_news_url) as url:
         search_news_data = url.read()
         search_news_response = json.loads(search_news_data)

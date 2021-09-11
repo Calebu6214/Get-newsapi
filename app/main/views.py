@@ -14,7 +14,7 @@ def index():
     title='Home-See your news'
     search_article=request.args.get('news_query')
     if search_article:
-        return redirect(url_for('search',news_name=search_article))
+        return redirect(url_for('main.search',news_name=search_article))
     else:
         return render_template('index.html', title=title,all_news=all_news)
 
@@ -48,4 +48,4 @@ def search(news_name):
     news_name_format = "+".join(news_name_list)
     searched_news = search_article(news_name_format)
     title = f'search results for {news_name}'
-    return render_template('news.html',title=title,all_news = searched_news)
+    return render_template('search.html',title=title,all_news = searched_news)
