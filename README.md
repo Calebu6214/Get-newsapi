@@ -8,9 +8,8 @@ This is an application that will help people list and preview news articles from
 ## How it works 
 As a user can ;
 * see various news sources on the homepage of the application.
-
-*  select a news source and see all news articles from the selected news source in the application.
-* 
+* Search for the article you want to see
+ 
 * see the image, description and the time a news article was created.
 
 * click on an article and read the full article on the source website.
