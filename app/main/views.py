@@ -13,12 +13,12 @@ def index():
     '''
     all_news=get_news()
     title='Home-See your news'
-    # search_article=request.args.get('sources')
+    search_article=request.args.get('article_query')
+    if search_article:
+        return redirect(url_for('main.search',news_name=search_article))
+    else:
     # if search_article:
-    #     return redirect(url_for('main.search',news_name=search_article))
-    # else:
-    # if search_article:
-    return render_template('index.html', title=title,all_news=all_news)
+        return render_template('index.html', title=title,all_news=all_news)
 
 
 @main.route('/news/<id>')
@@ -31,14 +31,14 @@ def articles(id):
     # Getting articles news
   
     articles=get_article(id)
-    return render_template('news.html', articles = articles)
+    # return render_template('news.html', articles = articles)
 
-    # search_news=request.args.get('article_query')
+    search_news=request.args.get('article_query')
 
-    # if search_news:
-    #     return redirect(url_for('main.search',news_name=search_news))
-    # else:
-    #    return render_template('news.html', title = title,articles=articles)
+    if search_news:
+        return redirect(url_for('main.search',news_name=search_news))
+    else:
+       return render_template('news.html',articles=articles)
     
 
 @main.route('/search/<news_name>')

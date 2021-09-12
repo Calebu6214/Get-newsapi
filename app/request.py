@@ -102,7 +102,7 @@ def process_article(article_response_list):
 
 
 def search_article(news_name):
-    search_news_url = base_url.format(news_name)
+    search_news_url = 'https://newsapi.org/v2/sources?apiKey=03a2bc584b204614aa752fb66a690094 &query={}'.format(news_name)
     with urllib.request.urlopen(search_news_url) as url:
         search_news_data = url.read()
         search_news_response = json.loads(search_news_data)

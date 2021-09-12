@@ -1,5 +1,8 @@
 .posterPath{
     padding: 200px;
-    width: 100px;
-    height:200px;
+    margin-top: 5px;
+    padding-top: 5%;
+}
+.img-responsive{
+    padding: 10px
 }
