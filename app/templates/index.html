@@ -23,14 +23,14 @@
 
         <div class="container">
             <form>
-                <input type="text" name="news_query" placeholder="Search for News" class="form-control">
+                <input type="text" name="article_query" placeholder="Search for News" class="form-control">
                 <input type="submit"  value="Submit" class="btn btn-default" >
             </form>
         </div>
         
         
         <!-- Popular article section  -->
-        <h3> Popular Articles</h3>
+        <h3> Popular News</h3>
         <ul class="view">
            {{ macro.displayNewsList(all_news)}}
        </ul>

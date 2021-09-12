@@ -1,3 +1,4 @@
+from app.article import Articles
 from flask import render_template,request,redirect,url_for
 from . import main
 from ..request import get_article,get_news
@@ -12,32 +13,33 @@ def index():
     '''
     all_news=get_news()
     title='Home-See your news'
-    search_article=request.args.get('news_query')
-    if search_article:
-        return redirect(url_for('main.search',news_name=search_article))
-    else:
-        return render_template('index.html', title=title,all_news=all_news)
+    # search_article=request.args.get('sources')
+    # if search_article:
+    #     return redirect(url_for('main.search',news_name=search_article))
+    # else:
+    # if search_article:
+    return render_template('index.html', title=title,all_news=all_news)
 
 
-@main.route('/news/<int:id>')
-def news(id):
+@main.route('/news/<id>')
+def articles(id):
 
     '''
     View root page function that returns the index page and its data
     '''
 
-    # Getting popular news
+    # Getting articles news
   
     articles=get_article(id)
-    title="{{title}}"
+    return render_template('news.html', articles = articles)
 
-    search_news=request.args.get('news_query')
+    # search_news=request.args.get('article_query')
 
-    if search_news:
-        return redirect(url_for('main.search',news_name=search_news))
-    else:
-        return render_template('news.html', title = title,articles=articles)
-    # return render_template('news.html', results = results,)
+    # if search_news:
+    #     return redirect(url_for('main.search',news_name=search_news))
+    # else:
+    #    return render_template('news.html', title = title,articles=articles)
+    
 
 @main.route('/search/<news_name>')
 def search(news_name):
