@@ -3,12 +3,12 @@ from .article import Articles
 import urllib.request,json
 
 #Getting api key
-apikey=None
+apikey='03a2bc584b204614aa752fb66a690094'
 
 #getting the movie base url
-base_url=None
+base_url='https://newsapi.org/v2/sources?apiKey=03a2bc584b204614aa752fb66a690094'
 #getting articles base url
-Article_base_url=None
+Article_base_url='https://newsapi.org/v2/top-headlines?sources={}&apiKey=03a2bc584b204614aa752fb66a690094'
 
 def configure_request(app):
     global apikey,base_url,Article_base_url
