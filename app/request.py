@@ -71,7 +71,7 @@ def get_article(id):
         news_details_data = url.read()
         news_details_response = json.loads(news_details_data)
 
-        # news_results = None
+        
         if news_details_response['articles']:
             news__article_list = news_details_response['articles']
             articles = process_article(news__article_list)
