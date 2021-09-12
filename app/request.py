@@ -65,7 +65,7 @@ def process_results(news_list):
 
 
 def get_article(id):
-    get_news_details_url = 'https://newsapi.org/v2/everything?sources=CBC-News&apiKey=03a2bc584b204614aa752fb66a690094'.format(id)
+    get_news_details_url = 'https://newsapi.org/v2/top-headlines?sources={}&apiKey=03a2bc584b204614aa752fb66a690094'.format(id)
 
     with urllib.request.urlopen(get_news_details_url) as url:
         news_details_data = url.read()
@@ -86,6 +86,7 @@ def process_article(article_response_list):
     for articles in article_response_list:
         print(articles)
         id = articles.get('id')
+        title=articles.get('title')
         author = articles.get('author')
         description = articles.get('decription')
         url = articles.get('url')
@@ -94,7 +95,7 @@ def process_article(article_response_list):
         content = articles.get('content')
 
         if urlToImage:
-            article_object = Articles(id, author, description, url, urlToImage, publishedAt, content)
+            article_object = Articles(id,title,author, description, url, urlToImage, publishedAt, content)
             articles_results.append(article_object)
 
     return articles_results

@@ -8,19 +8,22 @@
 
 <!-- Content block -->
 {% block content %}
+{%for articles in articles %}
+
 <div class="container">
 
     <!-- News background -->
     <div class="row">
-        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 imagePath" style="background: url({{articles.urlToImage}}) no-repeat center center" id="poster">
+           
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 posterPath" style="background: url({{articles.urlToImage}}) no-repeat center center "  id="poster">
         </div>
 
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 movie-details">
-            <h3>{{ articles.name }}</h3>
-
-            <p class="description"> {{ articles.description }}</p>
+            
+            <p> <a href="{{articles.url}}">{{ articles.author }}</a> </p>
+            <!-- <p class="description"> {{ articles.author }}</p> -->
             <p class="content">{{ articles.content }}</p>
-            <p class="ratings"> <b> {{ articles.publishedAt }}</b> - <i>{{ articles.author}}  </i> </p>
+            <p class="ratings">  {{ articles.publishedAt }}  {{ articles.author}}  </p>
             
 
 
@@ -29,4 +32,5 @@
 
 
 </div>
+{%endfor%}
 {% endblock %}
